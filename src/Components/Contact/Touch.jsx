@@ -123,215 +123,209 @@ const Touch = () => {
               Drop us your details for a quick response.
             </p>
 
-            <div className="space-y-4 sm:space-y-6">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
-                    Student's Name*
-                  </label>
-                  <input
-                    type="text"
-                    name="studentName"
-                    value={formData.studentName}
-                    onChange={handleChange}
-                    className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Enter student's name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
-                    Date of Birth*{" "}
-                    <span className="text-gray-400 text-xs">
-                      Eg. 14/01/2005
-                    </span>
-                  </label>
-                  <input
-                    type="date"
-                    name="dateOfBirth"
-                    value={formData.dateOfBirth}
-                    onChange={handleChange}
-                    className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
-                </div>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
+                  Student's Name*
+                </label>
+                <input
+                  type="text"
+                  name="studentName"
+                  value={formData.studentName}
+                  onChange={handleChange}
+                  className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter student's name"
+                />
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
-                    Gender*
-                  </label>
-                  <select
-                    name="gender"
-                    value={formData.gender}
-                    onChange={handleChange}
-                    className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
-                  >
-                    <option value="">Select</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
+              <div>
+                <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
+                  Date of Birth*{" "}
+                  <span className="text-gray-400 text-xs">
+                    Eg. 14/01/2005
+                  </span>
+                </label>
+                <input
+                  type="date"
+                  name="dateOfBirth"
+                  value={formData.dateOfBirth}
+                  onChange={handleChange}
+                  className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+
+              <div>
+                <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
+                  Gender*
+                </label>
+                <select
+                  name="gender"
+                  value={formData.gender}
+                  onChange={handleChange}
+                  className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                >
+                  <option value="">Select</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
+                  Class Applying for*
+                </label>
+                <select
+                  name="classApplying"
+                  value={formData.classApplying}
+                  onChange={handleChange}
+                  className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                >
+                  <option value="">Select</option>
+                  <option value="nursery">Nursery</option>
+                  <option value="kg">KG</option>
+                  <option value="1">Class 1</option>
+                  <option value="2">Class 2</option>
+                  <option value="3">Class 3</option>
+                  <option value="4">Class 4</option>
+                  <option value="5">Class 5</option>
+                  <option value="6">Class 6</option>
+                  <option value="7">Class 7</option>
+                  <option value="8">Class 8</option>
+                  <option value="9">Class 9</option>
+                  <option value="10">Class 10</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
+                  Parents' Name*
+                </label>
+                <input
+                  type="text"
+                  name="parentsName"
+                  value={formData.parentsName}
+                  onChange={handleChange}
+                  className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter parent's name"
+                />
+              </div>
+
+              <div>
+                <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
+                  Phone Number*
+                </label>
+                <div className="flex gap-2">
+                  <select className="px-2 sm:px-3 py-2 border border-gray-300 rounded-md bg-white text-xs sm:text-sm">
+                    <option>🇮🇳 +91</option>
                   </select>
-                </div>
-                <div>
-                  <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
-                    Class Applying for*
-                  </label>
-                  <select
-                    name="classApplying"
-                    value={formData.classApplying}
-                    onChange={handleChange}
-                    className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
-                  >
-                    <option value="">Select</option>
-                    <option value="nursery">Nursery</option>
-                    <option value="kg">KG</option>
-                    <option value="1">Class 1</option>
-                    <option value="2">Class 2</option>
-                    <option value="3">Class 3</option>
-                    <option value="4">Class 4</option>
-                    <option value="5">Class 5</option>
-                    <option value="6">Class 6</option>
-                    <option value="7">Class 7</option>
-                    <option value="8">Class 8</option>
-                    <option value="9">Class 9</option>
-                    <option value="10">Class 10</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
-                    Parents' Name*
-                  </label>
                   <input
-                    type="text"
-                    name="parentsName"
-                    value={formData.parentsName}
+                    type="tel"
+                    name="phoneNumber"
+                    value={formData.phoneNumber}
                     onChange={handleChange}
-                    className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Enter parent's name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
-                    Phone Number*
-                  </label>
-                  <div className="flex gap-2">
-                    <select className="px-2 sm:px-3 py-2 border border-gray-300 rounded-md bg-white text-xs sm:text-sm">
-                      <option>🇮🇳 +91</option>
-                    </select>
-                    <input
-                      type="tel"
-                      name="phoneNumber"
-                      value={formData.phoneNumber}
-                      onChange={handleChange}
-                      className="flex-1 px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      placeholder="Enter phone number"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
-                    WhatsApp Number*
-                  </label>
-                  <div className="flex gap-2">
-                    <select className="px-2 sm:px-3 py-2 border border-gray-300 rounded-md bg-white text-xs sm:text-sm">
-                      <option>🇮🇳 +91</option>
-                    </select>
-                    <input
-                      type="tel"
-                      name="whatsappNumber"
-                      value={formData.whatsappNumber}
-                      onChange={handleChange}
-                      className="flex-1 px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      placeholder="Enter WhatsApp number"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
-                    Email*
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Enter email address"
+                    className="flex-1 px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter phone number"
                   />
                 </div>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
-                    School Tour Required*
-                  </label>
-                  <select
-                    name="schoolTourRequired"
-                    value={formData.schoolTourRequired}
-                    onChange={handleChange}
-                    className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
-                  >
-                    <option value="No">No</option>
-                    <option value="Yes">Yes</option>
+              <div>
+                <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
+                  WhatsApp Number*
+                </label>
+                <div className="flex gap-2">
+                  <select className="px-2 sm:px-3 py-2 border border-gray-300 rounded-md bg-white text-xs sm:text-sm">
+                    <option>🇮🇳 +91</option>
                   </select>
-                </div>
-                <div>
-                  <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
-                    Schedule School Tour
-                  </label>
                   <input
-                    type="date"
-                    name="scheduleTour"
-                    value={formData.scheduleTour}
+                    type="tel"
+                    name="whatsappNumber"
+                    value={formData.whatsappNumber}
                     onChange={handleChange}
-                    className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="flex-1 px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter WhatsApp number"
                   />
                 </div>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
-                    School Tour Time Slot
-                  </label>
-                  <select
-                    name="tourTimeSlot"
-                    value={formData.tourTimeSlot}
-                    onChange={handleChange}
-                    className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
-                  >
-                    <option value="">Select</option>
-                    <option value="morning">Morning (9 AM - 12 PM)</option>
-                    <option value="afternoon">Afternoon (12 PM - 3 PM)</option>
-                    <option value="evening">Evening (3 PM - 5 PM)</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
-                    Source of Information*
-                  </label>
-                  <select
-                    name="sourceOfInfo"
-                    value={formData.sourceOfInfo}
-                    onChange={handleChange}
-                    className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
-                  >
-                    <option value="">Select</option>
-                    <option value="website">Website</option>
-                    <option value="social-media">Social Media</option>
-                    <option value="friend">Friend/Relative</option>
-                    <option value="advertisement">Advertisement</option>
-                    <option value="newspaper">Newspaper</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
+              <div>
+                <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
+                  Email*
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter email address"
+                />
+              </div>
+
+              <div>
+                <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
+                  School Tour Required*
+                </label>
+                <select
+                  name="schoolTourRequired"
+                  value={formData.schoolTourRequired}
+                  onChange={handleChange}
+                  className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                >
+                  <option value="No">No</option>
+                  <option value="Yes">Yes</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
+                  Schedule School Tour
+                </label>
+                <input
+                  type="date"
+                  name="scheduleTour"
+                  value={formData.scheduleTour}
+                  onChange={handleChange}
+                  className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+
+              <div>
+                <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
+                  School Tour Time Slot
+                </label>
+                <select
+                  name="tourTimeSlot"
+                  value={formData.tourTimeSlot}
+                  onChange={handleChange}
+                  className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                >
+                  <option value="">Select</option>
+                  <option value="morning">Morning (9 AM - 12 PM)</option>
+                  <option value="afternoon">Afternoon (12 PM - 3 PM)</option>
+                  <option value="evening">Evening (3 PM - 5 PM)</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-gray-700 mb-2 text-xs sm:text-sm font-medium">
+                  Source of Information*
+                </label>
+                <select
+                  name="sourceOfInfo"
+                  value={formData.sourceOfInfo}
+                  onChange={handleChange}
+                  className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                >
+                  <option value="">Select</option>
+                  <option value="website">Website</option>
+                  <option value="social-media">Social Media</option>
+                  <option value="friend">Friend/Relative</option>
+                  <option value="advertisement">Advertisement</option>
+                  <option value="newspaper">Newspaper</option>
+                  <option value="other">Other</option>
+                </select>
               </div>
 
               <div className="flex justify-center pt-4">
