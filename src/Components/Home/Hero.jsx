@@ -83,7 +83,7 @@ const Hero = () => {
   return (
     <>
       {/* Original Slider */}
-      <div className="relative w-full h-screen overflow-hidden bg-gray-900">
+      <div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[80vh] lg:h-screen overflow-hidden bg-gray-900">
         {/* Slides */}
         {slides.map((slide, index) => (
           <div
@@ -99,11 +99,11 @@ const Hero = () => {
             />
             <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent" />
 
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6">
-              <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 sm:px-6">
+              <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-4 animate-fade-in leading-tight">
                 {slide.title}
               </h1>
-              <p className="text-lg md:text-2xl max-w-2xl animate-fade-in">
+              <p className="text-xs xs:text-sm sm:text-lg md:text-xl lg:text-2xl max-w-xs sm:max-w-md md:max-w-2xl animate-fade-in">
                 {slide.subtitle}
               </p>
             </div>
@@ -113,10 +113,10 @@ const Hero = () => {
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-3 rounded-full backdrop-blur-sm transition-all"
+          className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-2 sm:p-3 rounded-full backdrop-blur-sm transition-all"
         >
           <svg
-            className="w-6 h-6"
+            className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -132,10 +132,10 @@ const Hero = () => {
 
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-3 rounded-full backdrop-blur-sm transition-all"
+          className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-2 sm:p-3 rounded-full backdrop-blur-sm transition-all"
         >
           <svg
-            className="w-6 h-6"
+            className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -150,15 +150,15 @@ const Hero = () => {
         </button>
 
         {/* Dots Navigation */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
+        <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 sm:space-x-3">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`h-2 sm:h-3 rounded-full transition-all duration-300 ${
                 index === currentSlide
-                  ? "bg-white w-8"
-                  : "bg-white/50 hover:bg-white/75"
+                  ? "bg-white w-6 sm:w-8"
+                  : "bg-white/50 hover:bg-white/75 w-2 sm:w-3"
               }`}
             />
           ))}
@@ -168,9 +168,9 @@ const Hero = () => {
       {/* New School Welcome Section */}
       <div
         ref={welcomeRef}
-        className="w-full py-16 px-6 md:px-12 lg:px-24 bg-white"
+        className="w-full py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-12 lg:px-24 bg-white"
       >
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start">
           {/* Left Side - Logo and Images */}
           <div
             className={`flex flex-col items-center transition-all duration-1000 ${
@@ -180,9 +180,9 @@ const Hero = () => {
             }`}
           >
             {/* School Logo */}
-            <div className="w-64 h-64 bg-blue-700 rounded-full flex items-center justify-center mb-8 shadow-2xl">
+            <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 bg-blue-700 rounded-full flex items-center justify-center mb-6 sm:mb-8 shadow-2xl">
               <div
-                className="text-yellow-400 font-bold text-7xl"
+                className="text-yellow-400 font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
                 style={{ fontFamily: "Comic Sans MS, cursive" }}
               >
                 DEMO
@@ -190,9 +190,9 @@ const Hero = () => {
             </div>
 
             {/* Image Grid */}
-            <div className="w-full space-y-4">
+            <div className="w-full space-y-3 sm:space-y-4">
               {/* Top Image */}
-              <div className="w-full h-48 bg-gray-200 rounded-2xl overflow-hidden border-4 border-blue-400 shadow-lg">
+              <div className="w-full h-32 sm:h-40 md:h-48 bg-gray-200 rounded-xl sm:rounded-2xl overflow-hidden border-2 sm:border-3 md:border-4 border-blue-400 shadow-lg">
                 <img
                   src={slide1}
                   alt="Student"
@@ -201,7 +201,7 @@ const Hero = () => {
               </div>
 
               {/* Bottom Image - Classroom */}
-              <div className="w-full h-80 bg-gray-200 rounded-2xl overflow-hidden border-4 border-green-500 shadow-lg">
+              <div className="w-full h-48 sm:h-60 md:h-72 lg:h-80 bg-gray-200 rounded-xl sm:rounded-2xl overflow-hidden border-2 sm:border-3 md:border-4 border-green-500 shadow-lg">
                 <img
                   src={slide2}
                   alt="Classroom"
@@ -219,12 +219,12 @@ const Hero = () => {
                 : "opacity-0 translate-y-20"
             }`}
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
               Welcome To <span className="text-blue-600">DEMO</span>{" "}
               <span className="text-yellow-500">International School</span>
             </h1>
 
-            <p className="text-gray-700 leading-relaxed mb-8 text-justify">
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-6 sm:mb-8 text-justify">
               DEMO International School, established in 0000, envisions
               the cultivation of young minds into truly global citizens within a
               nurturing and compassionate atmosphere. The pulsating vitality
@@ -236,16 +236,16 @@ const Hero = () => {
             </p>
 
             {/* Vision */}
-            <div className="mb-6">
-              <div className="flex items-start gap-4 mb-3">
-                <div className="bg-blue-100 p-3 rounded-lg">
-                  <Target className="w-6 h-6 text-blue-600" />
+            <div className="mb-5 sm:mb-6">
+              <div className="flex items-start gap-3 sm:gap-4 mb-2 sm:mb-3">
+                <div className="bg-blue-100 p-2 sm:p-3 rounded-lg flex-shrink-0">
+                  <Target className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                 </div>
-                <h2 className="text-2xl font-bold text-gray-800 mt-2">
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mt-1 sm:mt-2">
                   Vision
                 </h2>
               </div>
-              <p className="text-gray-700 leading-relaxed text-justify ml-16">
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed text-justify ml-12 sm:ml-14 md:ml-16">
                 Learning is not merely an acquisition of knowledge; it is a
                 priceless treasure that accompanies its possessor throughout
                 their journey. South City International, aims to foster an
@@ -254,16 +254,16 @@ const Hero = () => {
             </div>
 
             {/* Mission */}
-            <div className="mb-8">
-              <div className="flex items-start gap-4 mb-3">
-                <div className="bg-orange-100 p-3 rounded-lg">
-                  <Crosshair className="w-6 h-6 text-orange-600" />
+            <div className="mb-6 sm:mb-8">
+              <div className="flex items-start gap-3 sm:gap-4 mb-2 sm:mb-3">
+                <div className="bg-orange-100 p-2 sm:p-3 rounded-lg flex-shrink-0">
+                  <Crosshair className="w-5 h-5 sm:w-6 sm:h-6 text-orange-600" />
                 </div>
-                <h2 className="text-2xl font-bold text-gray-800 mt-2">
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mt-1 sm:mt-2">
                   Mission
                 </h2>
               </div>
-              <p className="text-gray-700 leading-relaxed text-justify ml-16">
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed text-justify ml-12 sm:ml-14 md:ml-16">
                 At DEMO International School, our mission is to cultivate
                 a harmonious and inspiring environment where every student is
                 nurtured to unleash their utmost intellectual capacity and reach
@@ -274,7 +274,7 @@ const Hero = () => {
             {/* View More Button */}
             <Link
               to="/about"
-              className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-8 rounded-lg transition-colors self-start shadow-md inline-block text-center"
+              className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2.5 sm:py-3 px-6 sm:px-8 rounded-lg transition-colors self-start shadow-md inline-block text-center text-sm sm:text-base"
             >
               VIEW MORE
             </Link>
@@ -285,9 +285,9 @@ const Hero = () => {
       {/* Why Choose SCIS Section */}
       <div
         ref={whyChooseRef}
-        className="w-full py-16 px-6 md:px-12 lg:px-24 bg-gray-50"
+        className="w-full py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-12 lg:px-24 bg-gray-50"
       >
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
           {/* Left Side - Content */}
           <div
             className={`flex flex-col transition-all duration-1000 ${
@@ -296,11 +296,11 @@ const Hero = () => {
                 : "opacity-0 translate-y-20"
             }`}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-10 text-gray-800">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 text-gray-800">
               WHY CHOOSE DEMO?
             </h2>
 
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {[
                 "CCTV Secured 3.59-acre campus with 70% open space",
                 "1:17 Teacher Student Ratio with An Experiential Pedagogical Approach",
@@ -317,17 +317,17 @@ const Hero = () => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className={`flex items-start gap-3 transition-all duration-700 ${
+                  className={`flex items-start gap-2.5 sm:gap-3 transition-all duration-700 ${
                     visibleSections.whyChoose
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-10"
                   }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
-                  <div className="mt-1 flex-shrink-0">
-                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                  <div className="mt-0.5 sm:mt-1 flex-shrink-0">
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 bg-green-500 rounded-full flex items-center justify-center">
                       <svg
-                        className="w-4 h-4 text-white"
+                        className="w-3 h-3 sm:w-4 sm:h-4 text-white"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
@@ -339,7 +339,7 @@ const Hero = () => {
                       </svg>
                     </div>
                   </div>
-                  <p className="text-gray-700 leading-relaxed">{item}</p>
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{item}</p>
                 </div>
               ))}
             </div>
@@ -354,7 +354,7 @@ const Hero = () => {
             }`}
           >
             <div className="relative">
-              <div className="w-96 h-96 rounded-full overflow-hidden shadow-2xl border-8 border-blue-400">
+              <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl border-4 sm:border-6 md:border-8 border-blue-400">
                 <img
                   src={slide3}
                   alt="School Campus"
@@ -362,9 +362,9 @@ const Hero = () => {
                 />
               </div>
               {/* Decorative sun icon */}
-              <div className="absolute bottom-8 left-8 w-20 h-20 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
+              <div className="absolute bottom-4 left-4 sm:bottom-5 sm:left-5 md:bottom-6 md:left-6 lg:bottom-8 lg:left-8 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
                 <svg
-                  className="w-12 h-12 text-green-600"
+                  className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-green-600"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
